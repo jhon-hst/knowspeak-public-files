@@ -3,7 +3,7 @@
     "title": "#1",
     "items": [
       {
-        "title": " DRÁCULA",
+        "name": " DRÁCULA",
         "url": "https://www.bramstoker.org/pdf/novels/05dracula.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e91cba2bce50c1b4184/b429fa8d-1cf7-46e9-a4ad-4c5688d77c5d/medium",
         "type": "pdf",
@@ -15,7 +15,7 @@
         }
       },
       {
-        "title": "ALICIA EN EL PAIS DE LAS MARAVILLAS",
+        "name": "ALICIA EN EL PAIS DE LAS MARAVILLAS",
         "url": "https://www.ucm.es/data/cont/docs/119-2014-02-19-Carroll.AliciaEnElPaisDeLasMaravillas.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e85cba2bce50c19bdea/9e39e39f-6a5e-4171-bd1d-4e791d13cfbc/medium",
         "type": "pdf",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "title": "AVENTURAS DE PINOCHO: HISTORIA DE UN MUÑECO DE MADERA",
+        "name": "AVENTURAS DE PINOCHO: HISTORIA DE UN MUÑECO DE MADERA",
         "url": "http://bibliotecadigital.ilce.edu.mx/Colecciones/CuentosMas/AventurasPinocho.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e88cba2bce50c1a0b23/0e8b3a81-1eba-4283-90c6-5a412aa222b4/medium",
         "type": "pdf",
@@ -39,7 +39,7 @@
         }
       },
       {
-        "title": "BODAS DE SANGRE",
+        "name": "BODAS DE SANGRE",
         "url": "https://idartesencasa.gov.co/sites/default/files/libros_pdf/124.%20Bodas%20de%20sangre.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e89cba2bce50c1a2fb9/658cca26-152e-4f5c-8f69-172e68c60444/medium",
         "type": "pdf",
@@ -51,7 +51,7 @@
         }
       },
       {
-        "title": "CONDUCCIÓN POLÍTICA",
+        "name": "CONDUCCIÓN POLÍTICA",
         "url": "https://bcn.gob.ar/uploads/Peron-completopara-web.pdf",
         "thumbnail": "https://covers.alibrate.com/b/5a0cd470bac1cbf7023bb213/a29ab66d-9739-4574-8507-5fabf4df5dc4/medium",
         "type": "pdf",
@@ -71,7 +71,7 @@
     "title": "#2",
     "items": [
       {
-        "title": "CUENTOS COMPLETOS",
+        "name": "CUENTOS COMPLETOS",
         "url": "https://www.imprentanacional.go.cr/editorialdigital/libros/literatura%20universal/cuentos_edgar_allan_poe_edincr.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ad8b5/65bc2c1f-d810-4c58-b262-f9a566acbccf/medium",
         "type": "pdf",
@@ -83,7 +83,7 @@
         }
       },
       {
-        "title": "CINCO SEMANAS EN GLOBO",
+        "name": "CINCO SEMANAS EN GLOBO",
         "url": "https://web.seducoahuila.gob.mx/biblioweb/upload/Julio%20Verne%20-%20Cinco%20Semanas%20en%20Globo.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59c2b4c966c515a7c2e02310/f031f215-d046-4fd2-88ad-95eaa8b0f26f/medium",
         "type": "pdf",
@@ -95,7 +95,7 @@
         }
       },
       {
-        "title": "COLMILLO BLANCO",
+        "name": "COLMILLO BLANCO",
         "url": "https://biblioteca.org.ar/libros/153592.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8ccba2bce50c1a8809/e7d9a76b-c20d-41fc-bc19-0f0c75b55878/medium",
         "type": "pdf",
@@ -107,7 +107,7 @@
         }
       },
       {
-        "title": "CRIMENES DE LA CALLE MORGUE",
+        "name": "CRIMENES DE LA CALLE MORGUE",
         "url": "https://mrpoecrafthyde.files.wordpress.com/2012/10/los-crc3admenes-de-la-calle-morgue.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8dcba2bce50c1abebc/1841bd13-8d7b-479d-9c61-5ed09e08aaaf/medium",
         "type": "pdf",
@@ -119,7 +119,7 @@
         }
       },
       {
-        "title": "ALICIA A TRAVES DEL ESPEJO",
+        "name": "ALICIA A TRAVES DEL ESPEJO",
         "url": "https://www.ucm.es/data/cont/docs/119-2014-02-19-Carroll.ATravesDelEspajo.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e85cba2bce50c19bdd3/583cb01f-41f5-4115-8dcc-fed419158e67/medium",
         "type": "pdf",
@@ -139,7 +139,7 @@
     "title": "#1",
     "items": [
       {
-        "title": "AVENTURAS DE PINOCHO: HISTORIA DE UN MUÑECO DE MADERA",
+        "name": "AVENTURAS DE PINOCHO: HISTORIA DE UN MUÑECO DE MADERA",
         "url": "http://bibliotecadigital.ilce.edu.mx/Colecciones/CuentosMas/AventurasPinocho.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e88cba2bce50c1a0b23/0e8b3a81-1eba-4283-90c6-5a412aa222b4/medium",
         "type": "pdf",
@@ -151,7 +151,7 @@
         }
       },
       {
-        "title": "BODAS DE SANGRE",
+        "name": "BODAS DE SANGRE",
         "url": "https://idartesencasa.gov.co/sites/default/files/libros_pdf/124.%20Bodas%20de%20sangre.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e89cba2bce50c1a2fb9/658cca26-152e-4f5c-8f69-172e68c60444/medium",
         "type": "pdf",
@@ -163,7 +163,7 @@
         }
       },
       {
-        "title": "CONDUCCIÓN POLÍTICA",
+        "name": "CONDUCCIÓN POLÍTICA",
         "url": "https://bcn.gob.ar/uploads/Peron-completopara-web.pdf",
         "thumbnail": "https://covers.alibrate.com/b/5a0cd470bac1cbf7023bb213/a29ab66d-9739-4574-8507-5fabf4df5dc4/medium",
         "type": "pdf",
@@ -175,7 +175,7 @@
         }
       },
       {
-        "title": " DRÁCULA",
+        "name": " DRÁCULA",
         "url": "https://www.bramstoker.org/pdf/novels/05dracula.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e91cba2bce50c1b4184/b429fa8d-1cf7-46e9-a4ad-4c5688d77c5d/medium",
         "type": "pdf",
@@ -187,7 +187,7 @@
         }
       },
       {
-        "title": "ALICIA EN EL PAIS DE LAS MARAVILLAS",
+        "name": "ALICIA EN EL PAIS DE LAS MARAVILLAS",
         "url": "https://www.ucm.es/data/cont/docs/119-2014-02-19-Carroll.AliciaEnElPaisDeLasMaravillas.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e85cba2bce50c19bdea/9e39e39f-6a5e-4171-bd1d-4e791d13cfbc/medium",
         "type": "pdf",
@@ -207,7 +207,7 @@
     "title": "#2",
     "items": [
       {
-        "title": "CRIMENES DE LA CALLE MORGUE",
+        "name": "CRIMENES DE LA CALLE MORGUE",
         "url": "https://mrpoecrafthyde.files.wordpress.com/2012/10/los-crc3admenes-de-la-calle-morgue.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8dcba2bce50c1abebc/1841bd13-8d7b-479d-9c61-5ed09e08aaaf/medium",
         "type": "pdf",
@@ -219,7 +219,7 @@
         }
       },
       {
-        "title": "ALICIA A TRAVES DEL ESPEJO",
+        "name": "ALICIA A TRAVES DEL ESPEJO",
         "url": "https://www.ucm.es/data/cont/docs/119-2014-02-19-Carroll.ATravesDelEspajo.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e85cba2bce50c19bdd3/583cb01f-41f5-4115-8dcc-fed419158e67/medium",
         "type": "pdf",
@@ -231,7 +231,7 @@
         }
       },
       {
-        "title": "CUENTOS COMPLETOS",
+        "name": "CUENTOS COMPLETOS",
         "url": "https://www.imprentanacional.go.cr/editorialdigital/libros/literatura%20universal/cuentos_edgar_allan_poe_edincr.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ad8b5/65bc2c1f-d810-4c58-b262-f9a566acbccf/medium",
         "type": "pdf",
@@ -243,7 +243,7 @@
         }
       },
       {
-        "title": "CINCO SEMANAS EN GLOBO",
+        "name": "CINCO SEMANAS EN GLOBO",
         "url": "https://web.seducoahuila.gob.mx/biblioweb/upload/Julio%20Verne%20-%20Cinco%20Semanas%20en%20Globo.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59c2b4c966c515a7c2e02310/f031f215-d046-4fd2-88ad-95eaa8b0f26f/medium",
         "type": "pdf",
@@ -255,7 +255,7 @@
         }
       },
       {
-        "title": "COLMILLO BLANCO",
+        "name": "COLMILLO BLANCO",
         "url": "https://biblioteca.org.ar/libros/153592.pdf",
         "thumbnail": "https://covers.alibrate.com/b/59872e8ccba2bce50c1a8809/e7d9a76b-c20d-41fc-bc19-0f0c75b55878/medium",
         "type": "pdf",
