@@ -125,7 +125,7 @@
       }
 
       function onPlayerStateChange(event) {
-        sendMessageToRN({ eventType: "playerStateChange", data: parsedUrl });
+        sendMessageToRN({ eventType: "playerStateChange", data: event.data });
       }
 
       var isFullScreen = false;
