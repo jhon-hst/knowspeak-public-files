@@ -27,11 +27,11 @@
     </div>
 
     <script>
-      const randomPlayerId = 'player' + Date.now();
-      document.getElementById('player').id = randomPlayerId;
+      const randomPlayerId = "player" + Date.now();
+      document.getElementById("player").id = randomPlayerId;
 
       const parsedUrl = new URL(window.location.href);
-      const UrlQueryData = parsedUrl.searchParams.get('data');
+      const UrlQueryData = parsedUrl.searchParams.get("data");
       const {
         end,
         list,
@@ -57,7 +57,7 @@
         window.ReactNativeWebView.postMessage(JSON.stringify(msg));
       }
 
-      let metaString = '';
+      let metaString = "";
       if (contentScale_s) {
         metaString += `initial-scale=${contentScale_s}, `;
       }
@@ -66,34 +66,66 @@
         metaString += `maximum-scale=${contentScale_s}`;
       }
 
-      const viewport = document.querySelector('meta[name=viewport]');
-      viewport.setAttribute('content', 'width=device-width, ' + metaString);
+      const viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute("content", "width=device-width, " + metaString);
 
-      var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      var firstScriptTag = document.getElementsByTagName('script')[0];
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       var player;
-  
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player(randomPlayerId, {
+          width: "1000",
+          height: "1000",
+          videoId: videoId_s,
+          playerVars: {
+            end: end,
+            rel: rel_s,
+            list: list,
+            color: color,
+            loop: loop_s,
+            start: start,
+            playsinline: 1,
+            hl: playerLang,
+            playlist: playlist,
+            listType: listType,
+            controls: controls_s,
+            fs: preventFullScreen_s,
+            cc_lang_pref: cc_lang_pref_s,
+            iv_load_policy: iv_load_policy,
+            modestbranding: modestbranding_s,
+            cc_load_policy: showClosedCaptions_s,
+          },
+          events: {
+            onReady: onPlayerReady,
+            onError: onPlayerError,
+            onStateChange: onPlayerStateChange,
+            onPlaybackRateChange: onPlaybackRateChange,
+            onPlaybackQualityChange: onPlaybackQualityChange,
+          },
+        });
+      }
+
       function onPlayerError(event) {
-        sendMessageToRN({eventType: 'playerError', data: event.data});
+        sendMessageToRN({ eventType: "playerError", data: event.data });
       }
 
       function onPlaybackRateChange(event) {
-        sendMessageToRN({eventType: 'playbackRateChange', data: event.data});
+        sendMessageToRN({ eventType: "playbackRateChange", data: event.data });
       }
 
       function onPlaybackQualityChange(event) {
-        sendMessageToRN({eventType: 'playerQualityChange', data: event.data});
+        sendMessageToRN({ eventType: "playerQualityChange", data: event.data });
       }
 
       function onPlayerReady(event) {
-        sendMessageToRN({eventType: 'playerReady'});
+        sendMessageToRN({ eventType: "playerReady" });
       }
 
       function onPlayerStateChange(event) {
-        sendMessageToRN({eventType: 'playerStateChange', data: event.data});
+        sendMessageToRN({ eventType: "playerStateChange", data: event.data });
       }
 
       var isFullScreen = false;
@@ -105,15 +137,15 @@
           document.webkitFullscreenElement;
 
         sendMessageToRN({
-          eventType: 'fullScreenChange',
+          eventType: "fullScreenChange",
           data: Boolean(isFullScreen),
         });
       }
 
-      document.addEventListener('fullscreenchange', onFullScreenChange);
-      document.addEventListener('msfullscreenchange', onFullScreenChange);
-      document.addEventListener('mozfullscreenchange', onFullScreenChange);
-      document.addEventListener('webkitfullscreenchange', onFullScreenChange);
+      document.addEventListener("fullscreenchange", onFullScreenChange);
+      document.addEventListener("msfullscreenchange", onFullScreenChange);
+      document.addEventListener("mozfullscreenchange", onFullScreenChange);
+      document.addEventListener("webkitfullscreenchange", onFullScreenChange);
     </script>
   </body>
 </html>
