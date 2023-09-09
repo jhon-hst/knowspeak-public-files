@@ -3,60 +3,60 @@
     "title": "#1",
     "items": [
       {
-        "name": " DRÁCULA",
-        "url": "https://www.bramstoker.org/pdf/novels/05dracula.pdf",
-        "thumbnail": "https://covers.alibrate.com/b/59872e91cba2bce50c1b4184/b429fa8d-1cf7-46e9-a4ad-4c5688d77c5d/medium",
+        "title": "CUENTOS DE AMOR DE LOCURA Y DE MUERTE HORACIO QUIROGA",
+        "url": "https://biblioteca.org.ar/libros/211732.pdf",
+        "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ad919/2ae91521-2067-4036-8cb2-1262fc1e38c2/medium",
         "type": "pdf",
         "lang": "es",
-        "created_at": 1691863299093,
+        "created_at": 1694277649782,
         "category": {
           "id": "1",
           "name": "General"
         }
       },
       {
-        "name": "ALICIA EN EL PAIS DE LAS MARAVILLAS",
-        "url": "https://www.ucm.es/data/cont/docs/119-2014-02-19-Carroll.AliciaEnElPaisDeLasMaravillas.pdf",
-        "thumbnail": "https://covers.alibrate.com/b/59872e85cba2bce50c19bdea/9e39e39f-6a5e-4171-bd1d-4e791d13cfbc/medium",
+        "title": "CUENTOS DE LA SELVA",
+        "url": "https://www.mendoza.edu.ar/wp-content/uploads/2020/04/Cuentos-de-la-selva.pdf",
+        "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ada40/55be3b25-31b5-494e-b18e-6325a2718a0c/medium",
         "type": "pdf",
         "lang": "es",
-        "created_at": 1691862322320,
+        "created_at": 1694277649782,
         "category": {
           "id": "1",
           "name": "General"
         }
       },
       {
-        "name": "AVENTURAS DE PINOCHO: HISTORIA DE UN MUÑECO DE MADERA",
-        "url": "http://bibliotecadigital.ilce.edu.mx/Colecciones/CuentosMas/AventurasPinocho.pdf",
-        "thumbnail": "https://covers.alibrate.com/b/59872e88cba2bce50c1a0b23/0e8b3a81-1eba-4283-90c6-5a412aa222b4/medium",
+        "title": "CUENTOS DE LOS HERMANOS GRIMM",
+        "url": "https://web.seducoahuila.gob.mx/biblioweb/upload/cuentos_de_los_hermanos_grimm_i%20(1).pdf",
+        "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ada74/1694d636-5f2b-4a1d-8021-1673aed92afd/medium",
         "type": "pdf",
         "lang": "es",
-        "created_at": 1691862322320,
+        "created_at": 1694277649782,
         "category": {
           "id": "1",
           "name": "General"
         }
       },
       {
-        "name": "BODAS DE SANGRE",
-        "url": "https://idartesencasa.gov.co/sites/default/files/libros_pdf/124.%20Bodas%20de%20sangre.pdf",
-        "thumbnail": "https://covers.alibrate.com/b/59872e89cba2bce50c1a2fb9/658cca26-152e-4f5c-8f69-172e68c60444/medium",
+        "title": "CUMBRES BORRASCOSAS",
+        "url": "https://www.suneo.mx/literatura/subidas/Charlotte%20Bront%C3%A9%20Cumbres%20Borrascosas.pdf",
+        "thumbnail": "https://covers.alibrate.com/b/59872e8ecba2bce50c1ae7ea/dddb4053-80e1-44ca-9a8f-43f11e80423a/medium",
         "type": "pdf",
         "lang": "es",
-        "created_at": 1691862322320,
+        "created_at": 1694277649782,
         "category": {
           "id": "1",
           "name": "General"
         }
       },
       {
-        "name": "CONDUCCIÓN POLÍTICA",
-        "url": "https://bcn.gob.ar/uploads/Peron-completopara-web.pdf",
-        "thumbnail": "https://covers.alibrate.com/b/5a0cd470bac1cbf7023bb213/a29ab66d-9739-4574-8507-5fabf4df5dc4/medium",
+        "title": "DE LA TIERRA A LA LUNA",
+        "url": "https://biblioteca.org.ar/libros/656256.pdf",
+        "thumbnail": "https://covers.alibrate.com/b/5a0e19dbbac1cbf7023f3be4/c34de13a-7133-4da9-8050-17070b7002bd/medium",
         "type": "pdf",
         "lang": "es",
-        "created_at": 1691862322320,
+        "created_at": 1694277649782,
         "category": {
           "id": "1",
           "name": "General"
