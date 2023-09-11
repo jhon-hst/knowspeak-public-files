@@ -1,6 +1,42 @@
 document.getElementById("outerContainer").style.display = "none";
 document.getElementById("web-page").style.backgroundColor = "#fff";
+const fileInput = document.getElementById("fileInputWebPage");
 
+fileInput.addEventListener("change", (event) => {
+  const selectedFile = event.target.files[0]; // Obtener el archivo seleccionado
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const base64String = reader.result.split(",")[1]; // Obtener la parte Base64 del resultado
+    document.getElementById("outerContainer").style.display = "";
+    document.getElementById("web-page").style.display = "none";
+    loadPdfOnWebView(base64String);
+  };
+
+  reader.readAsDataURL(selectedFile);
+});
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// ---------**** Send messages to react-native ****----------------
+const onMessage = (messaje) => {
+  console.log(messaje);
+  // window.ReactNativeWebView.postMessage(messaje)
+};
+
+// ---------**** Start loadPdfOnWebView ****----------------
 const loadPdfOnWebView = (base64) => {
   PDFViewerApplicationOptions.set("defaultUrl", null);
 
@@ -14,17 +50,16 @@ const loadPdfOnWebView = (base64) => {
     }
     return array;
   }
-  const pdfAsArray = convertDataURIToBinary("${base64}");
+  // const pdfAsArray = convertDataURIToBinary("${base64}");
+  const pdfAsArray = convertDataURIToBinary(base64);
 
   (async () => {
     try {
       await PDFViewerApplication.open({ data: pdfAsArray });
     } catch (e) {
-      window.ReactNativeWebView.postMessage(
-        JSON.stringify({ type: "${PostMessageEventsTypes.ERROR}", e })
-      );
+      onMessage(JSON.stringify({ type: "${PostMessageEventsTypes.ERROR}", e }));
     } finally {
-      window.ReactNativeWebView.postMessage(
+      onMessage(
         JSON.stringify({
           type: "${PostMessageEventsTypes.LOADING_FINALIZED}",
         })
@@ -32,64 +67,68 @@ const loadPdfOnWebView = (base64) => {
     }
   })();
 };
+// ---------**** End loadPdfOnWebView ****----------------
 
-const clickOverTextListener = () => {
-  // change selection text color
-  // span is to pdf.js
-  var css = `
-        ::selection {
-            background-color: #3EE8B5;
-        }
-        span::selection {
-            background-color: #3EE8B5 !important;
-        }
-      `;
+// ---------**** Start press over text ****----------------
 
-  var styleElement = document.createElement("style");
-  styleElement.innerHTML = css;
-  document.head.appendChild(styleElement);
+// change selection text color
+// span is to pdf.js
+var css = `
+    ::selection {
+        background-color: #3EE8B5;
+    }
+    span::selection {
+        background-color: #3EE8B5 !important;
+    }
+`;
 
-  document.addEventListener("click", function (event) {
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount < 1) return true;
-    const range = selection.getRangeAt(0);
-    const node = selection.anchorNode;
-    const word_regexp = /^[\\p{L}\\d\\p{P}ÁÉÍÓÚáéíóúüÜñÑ]*$/u;
+var styleElement = document.createElement("style");
+styleElement.innerHTML = css;
+document.head.appendChild(styleElement);
 
-    // Extend the range backward until it matches word beginning
-    while (range.startOffset > 0 && range.toString().match(word_regexp)) {
+const onPressOverText = () => {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount < 1) return true;
+  const range = selection.getRangeAt(0);
+  const node = selection.anchorNode;
+
+  // when is only click over a text
+  if (range.startOffset === range.endOffset) {
+    // Extend the range forward until the start word
+    while (range.startOffset > 0) {
       range.setStart(node, range.startOffset - 1);
-    }
-    // Restore the valid word match after overshooting
-    if (!range.toString().match(word_regexp)) {
-      range.setStart(node, range.startOffset + 1);
+      if (range.toString().includes(" ")) {
+        range.setStart(node, range.startOffset + 1);
+        break;
+      }
     }
 
-    // Extend the range forward until it matches word ending
-    while (
-      range.endOffset < node.length &&
-      range.toString().match(word_regexp)
-    ) {
+    // Extend the range until the end word
+    while (range.endOffset < node.length) {
       range.setEnd(node, range.endOffset + 1);
-    }
-    // Restore the valid word match after overshooting
-    if (!range.toString().match(word_regexp)) {
-      range.setEnd(node, range.endOffset - 1);
+      if (range.toString().includes(" ")) {
+        range.setEnd(node, range.endOffset - 1);
+        break;
+      }
     }
 
-    const word = range.toString();
+    const word = range.toString().trim();
 
     if (word) {
-      /* This is because in iOS does not work with ::selection style to show the selected
-            text with background  #3EE8B5 and color #263859 */
+      /* 
+      This is because in iOS does not work with ::selection style to show 
+      the selected text with background  #3EE8B5 and color #263859 
+    */
 
       let partialSpan = document.createElement("span");
       partialSpan.textContent = word;
       partialSpan.style.backgroundColor = "#3EE8B5";
 
       let isPdfViewer = document.querySelector(".pdfViewer") !== null;
-      /* changing the color of the text in the pdf viewer makes it look weird the text
-            is because of the pdf viewer styles */
+      /* 
+      changing the color of the text in the pdf viewer makes 
+      it look weird the text is because of the pdf viewer styles 
+    */
 
       if (!isPdfViewer) {
         partialSpan.style.color = "#263859";
@@ -97,7 +136,7 @@ const clickOverTextListener = () => {
       range.deleteContents();
       range.insertNode(partialSpan);
 
-      window.ReactNativeWebView.postMessage(
+      onMessage(
         JSON.stringify({
           type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
           word,
@@ -106,16 +145,42 @@ const clickOverTextListener = () => {
 
       // clean text selected
       setTimeout(() => {
-        // only work in android
-        // window.getSelection().removeAllRanges();
-
-        // to clean selected text in iOS
         let textContent = document.createTextNode(word);
         partialSpan.parentNode.replaceChild(textContent, partialSpan);
-      }, 100);
+      }, 200);
+    } else {
+      selection.removeAllRanges();
     }
-  });
+  } else {
+    // when select a long text
+    let selection = document.getSelection();
+
+    onMessage(
+      JSON.stringify({
+        type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
+        word: selection.toString(),
+      })
+    );
+  }
 };
+
+document.addEventListener("pointerup", function () {
+  onPressOverText();
+});
+
+// ---------**** End press over text ****----------------
+
+// ---------**** Start select long text ****----------------
+
+// document.addEventListener("selectionchange", function () {
+//   console.log("me llaman 2");
+//   // onPressOverText();
+//   let selection = document.getSelection();
+
+//   console.log(selection.toString());
+// });
+
+// ---------**** End select long text ****----------------
 
 const microphoneInjectorOnInputs = () => {
   /*
@@ -182,7 +247,7 @@ const microphoneInjectorOnInputs = () => {
 
         if (input) {
           inputMicrophoneActive = input;
-          window.ReactNativeWebView.postMessage(
+          onMessage(
             JSON.stringify({
               type: "${PostMessageEventsTypes.OPEN_MICROPHONE}",
             })
@@ -230,7 +295,7 @@ const microphoneInjectorOnInputs = () => {
 
     if (!elements.length && (textareas.length || inputs.length)) {
       addMicrophone();
-      window.ReactNativeWebView.postMessage(
+      onMessage(
         JSON.stringify({
           type: "${PostMessageEventsTypes.ADDED_MICROPHONES}",
         })
