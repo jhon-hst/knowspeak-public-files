@@ -1,5 +1,3 @@
-import onMessage from "/pdf-js/web/webviewfn/message.js";
-
 document.getElementById("outerContainer").style.display = "none";
 document.getElementById("web-page").style.backgroundColor = "#fff";
 const fileInput = document.getElementById("fileInputWebPage");
@@ -18,7 +16,14 @@ fileInput.addEventListener("change", (event) => {
   reader.readAsDataURL(selectedFile);
 });
 
+// ADD BELOW CODE ONLY
+
 function loadPdfOnWebView(base64) {
+  const onMessage = (messaje) => {
+    console.log(messaje);
+    // window.ReactNativeWebView.postMessage(messaje)
+  };
+
   PDFViewerApplicationOptions.set("defaultUrl", null);
 
   function convertDataURIToBinary(pdfAsDataUri) {
