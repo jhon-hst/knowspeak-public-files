@@ -3,7 +3,7 @@
     "title": "#1",
     "items": [
       {
-        "title": "Camilo como nunca antes lo has visto | A Day In The Live: Camilo",
+        "name": "Camilo como nunca antes lo has visto | A Day In The Live: Camilo",
         "url": "https://www.youtube.com/watch?v=9yhcs5OwjOY",
         "thumbnail": "https://i.ytimg.com/vi/9yhcs5OwjOY/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -15,7 +15,7 @@
         }
       },
       {
-        "title": "Soy youtuber, VAMPIRO y gallego | Drácula, el vampiro gallego #1 | WEBSERIE LITERARIA",
+        "name": "Soy youtuber, VAMPIRO y gallego | Drácula, el vampiro gallego #1 | WEBSERIE LITERARIA",
         "url": "https://www.youtube.com/watch?v=5nz_3Rbt-ts",
         "thumbnail": "https://i.ytimg.com/vi/5nz_3Rbt-ts/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "title": "¿Qué harías si fueras INVISIBLE? | La Supercafetera 1x02",
+        "name": "¿Qué harías si fueras INVISIBLE? | La Supercafetera 1x02",
         "url": "https://www.youtube.com/watch?v=SV3cnTtjXCs",
         "thumbnail": "https://i.ytimg.com/vi/SV3cnTtjXCs/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -39,7 +39,7 @@
         }
       },
       {
-        "title": "Anunnakis: ¿Dioses Extraterrestres que Moldearon la Humanidad?  | 10 ALIEN EVIDENCES",
+        "name": "Anunnakis: ¿Dioses Extraterrestres que Moldearon la Humanidad?  | 10 ALIEN EVIDENCES",
         "url": "https://www.youtube.com/watch?v=vc4HTElgPHM",
         "thumbnail": "https://i.ytimg.com/vi/vc4HTElgPHM/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -51,7 +51,7 @@
         }
       },
       {
-        "title": "¿Cuál fue el peor impacto de asteroide de todos?",
+        "name": "¿Cuál fue el peor impacto de asteroide de todos?",
         "url": "https://www.youtube.com/watch?v=U4x8qhcy1IA",
         "thumbnail": "https://i.ytimg.com/vi/U4x8qhcy1IA/hqdefault.jpg",
         "type": "youtubeVideo",

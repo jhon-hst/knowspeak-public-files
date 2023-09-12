@@ -3,7 +3,7 @@
     "title": "#1",
     "items": [
       {
-        "title": "20 Best Love Stories of All Time - Famous Couples & Lovers in History",
+        "name": "20 Best Love Stories of All Time - Famous Couples & Lovers in History",
         "url": "https://www.townandcountrymag.com/leisure/arts-and-culture/news/g3233/greatest-love-stories-in-history/",
         "thumbnail": "https://hips.hearstapps.com/toc.h-cdn.co/assets/17/05/1485804157-liz-dick.jpg?crop=1.00xw:0.400xh;0,0.262xh&resize=1200:*",
         "type": "webPage",
@@ -15,7 +15,7 @@
         }
       },
       {
-        "title": "The Sculptor of Lyon – A Historical Fiction Short Story by Michał Przywara – Reedsy Prompts",
+        "name": "The Sculptor of Lyon – A Historical Fiction Short Story by Michał Przywara – Reedsy Prompts",
         "url": "https://blog.reedsy.com/short-story/g8mupw/",
         "thumbnail": "https://blog-cdn.reedsy.com/packs/media/images/writing-prompts/og-image-3c7d1b813198444b6b805ccb967c28d6.jpg",
         "type": "webPage",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "title": "The 10 Richest People of All Time | Money",
+        "name": "The 10 Richest People of All Time | Money",
         "url": "https://money.com/the-10-richest-people-of-all-time-2/",
         "thumbnail": "https://img.money.com/2015/07/150724_em_richestpeople_musa.jpg?quality=85",
         "type": "webPage",
@@ -39,7 +39,7 @@
         }
       },
       {
-        "title": "Student Loan Bills Are Coming Soon: Here's How to to Prepare | Money",
+        "name": "Student Loan Bills Are Coming Soon: Here's How to to Prepare | Money",
         "url": "https://money.com/student-loan-payments-resume-how-to-prepare/",
         "thumbnail": "https://img.money.com/2023/09/College-Student-Loan-Payments-Resume.jpg?quality=85",
         "type": "webPage",
@@ -51,7 +51,7 @@
         }
       },
       {
-        "title": "\n      The History of Playing Cards: The Evolution of the Modern Deck\n – PlayingCardDecks.com",
+        "name": "\n      The History of Playing Cards: The Evolution of the Modern Deck\n – PlayingCardDecks.com",
         "url": "https://playingcarddecks.com/blogs/all-in/history-playing-cards-modern-deck",
         "thumbnail": "http://playingcarddecks.com/cdn/shop/articles/Featured_Blog_Image_Template_3f447038-a996-4d14-926b-262f67cb559f.jpg?v=1539660205",
         "type": "webPage",

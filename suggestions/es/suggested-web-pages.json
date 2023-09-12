@@ -3,7 +3,7 @@
     "title": "#1",
     "items": [
       {
-        "title": "Historia y evolución del dinero",
+        "name": "Historia y evolución del dinero",
         "url": "https://www.creditea.es/blog/historia-y-evolucion-del-dinero",
         "thumbnail": null,
         "type": "webPage",
@@ -15,7 +15,7 @@
         }
       },
       {
-        "title": "La fascinante nueva teoría sobre la función de Stonehenge, el misterioso y más famoso monumento de Inglaterra - BBC News Mundo",
+        "name": "La fascinante nueva teoría sobre la función de Stonehenge, el misterioso y más famoso monumento de Inglaterra - BBC News Mundo",
         "url": "https://www.bbc.com/mundo/vert-tra-65806110",
         "thumbnail": "https://ichef.bbci.co.uk/news/1024/branded_mundo/67FB/production/_129991662_gettyimages-177724819.jpg",
         "type": "webPage",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "title": "6 de septiembre de 1930 - Crónica de un golpe anunciado - El Historiador",
+        "name": "6 de septiembre de 1930 - Crónica de un golpe anunciado - El Historiador",
         "url": "https://www.elhistoriador.com.ar/6-de-septiembre-de-1930-cronica-de-un-golpe-anunciado/",
         "thumbnail": "https://www.elhistoriador.com.ar/wp-content/uploads/2017/11/golpe-destacado.jpg",
         "type": "webPage",
@@ -39,7 +39,7 @@
         }
       },
       {
-        "title": "10 lugares de Sudamérica que debes conocer en 2020 | Blog Denomades: Información y guía de viajes, qué hacer, ver y visitar",
+        "name": "10 lugares de Sudamérica que debes conocer en 2020 | Blog Denomades: Información y guía de viajes, qué hacer, ver y visitar",
         "url": "https://www.denomades.com/blog/lugares-sudamerica-debes-conocer/",
         "thumbnail": "https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2019/12/19184140/pedernales.jpg",
         "type": "webPage",
@@ -51,7 +51,7 @@
         }
       },
       {
-        "title": "¿Cuál es el río más largo del planeta? - Fundación Aquae",
+        "name": "¿Cuál es el río más largo del planeta? - Fundación Aquae",
         "url": "https://www.fundacionaquae.org/wiki/rio-mas-largo-del-planeta/",
         "thumbnail": "https://www.fundacionaquae.org/wp-content/uploads/2017/05/rio-amazonas-nasa-1024x624-1-1.jpg",
         "type": "webPage",

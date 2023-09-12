@@ -3,7 +3,7 @@
     "title": "#1",
     "items": [
       {
-        "title": "How Far is Too Far? | The Age of A.I.",
+        "name": "How Far is Too Far? | The Age of A.I.",
         "url": "https://www.youtube.com/watch?v=UwsrzCVZAb8",
         "thumbnail": "https://i.ytimg.com/vi/UwsrzCVZAb8/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -15,7 +15,7 @@
         }
       },
       {
-        "title": "Can Will Smith Lose 20lbs In 20 Weeks? | Best Shape Of My Life",
+        "name": "Can Will Smith Lose 20lbs In 20 Weeks? | Best Shape Of My Life",
         "url": "https://www.youtube.com/watch?v=-9WDEFtSU_M",
         "thumbnail": "https://i.ytimg.com/vi/-9WDEFtSU_M/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "title": "Do Not Eat This SPICY PEPPER | The Guava Juice Show",
+        "name": "Do Not Eat This SPICY PEPPER | The Guava Juice Show",
         "url": "https://www.youtube.com/watch?v=PJn1BbM7a5o",
         "thumbnail": "https://i.ytimg.com/vi/PJn1BbM7a5o/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -39,7 +39,7 @@
         }
       },
       {
-        "title": "Tom Holland and Zendaya Answer Fan Questions | Extended Interview",
+        "name": "Tom Holland and Zendaya Answer Fan Questions | Extended Interview",
         "url": "https://www.youtube.com/watch?v=zJ5rFV5b9Xs",
         "thumbnail": "https://i.ytimg.com/vi/zJ5rFV5b9Xs/hqdefault.jpg",
         "type": "youtubeVideo",
@@ -51,7 +51,7 @@
         }
       },
       {
-        "title": "Everything You Need to Know About the Mattel Cinematic Universe | IMDb",
+        "name": "Everything You Need to Know About the Mattel Cinematic Universe | IMDb",
         "url": "https://www.youtube.com/watch?v=wAoMX2HgE5g",
         "thumbnail": "https://i.ytimg.com/vi/wAoMX2HgE5g/hqdefault.jpg",
         "type": "youtubeVideo",
