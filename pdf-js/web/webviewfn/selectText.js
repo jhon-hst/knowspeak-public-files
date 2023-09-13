@@ -5,9 +5,13 @@ const onMessage = (messaje) => {
 
 // change selection text color
 // span is to pdf.js
+let isPdfViewer = document.querySelector(".pdfViewer") !== null;
+let color = isPdfViewer ? "" : "#263859";
+
 var css = `
-    ::selection {
-        background-color: #3EE8B5;
+	::selection {
+		background-color: #3EE8B5;
+		color: ${color} ;
     }
     span::selection {
         background-color: #3EE8B5 !important;
@@ -41,6 +45,8 @@ let styleElement = document.createElement("style");
 styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
+let modifyCurrentText = true;
+
 const onPressOverText = () => {
   const selection = window.getSelection();
   if (!selection || selection.rangeCount < 1) return true;
@@ -48,7 +54,9 @@ const onPressOverText = () => {
   const node = selection.anchorNode;
 
   // when is only click over a text
-  if (range.startOffset === range.endOffset) {
+  if (selection.isCollapsed) {
+    modifyCurrentText = false;
+
     // Extend the range forward until the start word
     while (range.startOffset > 0) {
       range.setStart(node, range.startOffset - 1);
@@ -67,47 +75,10 @@ const onPressOverText = () => {
       }
     }
 
-    let isPdfViewer = document.querySelector(".pdfViewer") !== null;
-    /* changing the color of the text in the pdf viewer makes it look weird the text
-        is because of the pdf viewer styles */
-
-    if (!isPdfViewer) {
-      let styleElementToColorText = document.createElement("style");
-      styleElementToColorText.innerHTML = css;
-      document.head.appendChild(styleElementToColorText);
-      styleElementToColorText.innerHTML = `
-                ::selection {
-                    background-color: #3EE8B5;
-                    color: #263859
-                }
-            `;
-    }
-
-    const word = range.toString().trim();
-
-    if (word) {
-      onMessage(
-        JSON.stringify({
-          type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
-          word,
-        })
-      );
-      setTimeout(() => {
-        selection.removeAllRanges();
-      }, 200);
-    } else {
+    setTimeout(() => {
       selection.removeAllRanges();
-    }
-  } else {
-    // when select a long text
-    let selection = document.getSelection();
-
-    onMessage(
-      JSON.stringify({
-        type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
-        word: selection.toString(),
-      })
-    );
+      modifyCurrentText = true;
+    }, 200);
   }
 };
 
@@ -121,4 +92,18 @@ document.addEventListener("click", function (e) {
     clickElemAnimation.parentElement.removeChild(clickElemAnimation);
   });
   onPressOverText();
+});
+
+document.addEventListener("selectionchange", function (e) {
+  // when select a long text
+  let selection = document.getSelection();
+  if (selection && selection.toString().length) {
+    onMessage(
+      JSON.stringify({
+        type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
+        textSelected: selection.toString().trim(),
+        modifyCurrentText,
+      })
+    );
+  }
 });
