@@ -1,3 +1,5 @@
+let PlatformOS = "ios";
+
 const onMessage = (messaje) => {
   console.log(messaje);
   // window.ReactNativeWebView.postMessage(messaje)
@@ -46,6 +48,7 @@ styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
 let modifyCurrentText = true;
+let activeSelectionByClick = true;
 
 const onPressOverText = () => {
   const selection = window.getSelection();
@@ -75,6 +78,20 @@ const onPressOverText = () => {
       }
     }
 
+    if (PlatformOS === "ios") {
+      // event selectionchange does not active with this selection in iOS
+      const word = range.toString().trim();
+
+      if (word) {
+        onMessage(
+          JSON.stringify({
+            type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
+            textSelected: word,
+            modifyCurrentText,
+          })
+        );
+      }
+    }
     setTimeout(() => {
       selection.removeAllRanges();
       modifyCurrentText = true;
@@ -83,15 +100,27 @@ const onPressOverText = () => {
 };
 
 document.addEventListener("click", function (e) {
-  var clickElemAnimation = document.createElement("div");
-  clickElemAnimation.className = "clickEffect";
-  clickElemAnimation.style.top = e.clientY + "px";
-  clickElemAnimation.style.left = e.clientX + "px";
-  document.body.appendChild(clickElemAnimation);
-  clickElemAnimation.addEventListener("animationend", () => {
-    clickElemAnimation.parentElement.removeChild(clickElemAnimation);
-  });
-  onPressOverText();
+  if (PlatformOS === "ios") {
+    // This animation only to iOS beacause android alreday have the selection animation
+    var clickElemAnimation = document.createElement("div");
+    clickElemAnimation.className = "clickEffect";
+    clickElemAnimation.style.top = e.clientY + "px";
+    clickElemAnimation.style.left = e.clientX + "px";
+    document.body.appendChild(clickElemAnimation);
+    clickElemAnimation.addEventListener("animationend", () => {
+      clickElemAnimation.parentElement.removeChild(clickElemAnimation);
+    });
+  }
+  if (activeSelectionByClick) {
+    onPressOverText();
+  }
+
+  let selection = document.getSelection();
+  if (selection.toString().split(" ").length > 1) {
+    activeSelectionByClick = false;
+  } else {
+    activeSelectionByClick = true;
+  }
 });
 
 document.addEventListener("selectionchange", function (e) {
@@ -105,5 +134,13 @@ document.addEventListener("selectionchange", function (e) {
         modifyCurrentText,
       })
     );
+    if (selection.toString().split(" ").length > 1) {
+      activeSelectionByClick = false;
+    }
   }
 });
+
+function removeAllSelections() {
+  let selection = document.getSelection();
+  selection.removeAllRanges();
+}
