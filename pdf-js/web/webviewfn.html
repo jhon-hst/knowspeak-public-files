@@ -1250,6 +1250,23 @@ See https://github.com/adobe-type-tools/cmap-resources
             >United States</a
           >, visiting the eastern cities.
         </p>
+
+        <div style="margin-top: 30px">
+          <input type="name" id="inputToLoadText" />
+          <button id="addTextToInput">Add text on input</button>
+        </div>
+        <div style="margin-top: 30px">
+          <input type="text" />
+        </div>
+        <div style="margin-top: 30px">
+          <input type="search" />
+        </div>
+        <div style="margin-top: 30px">
+          <input type="number" />
+        </div>
+        <div style="margin-top: 30px">
+          <textarea id="story" name="story" rows="5" cols="33"> </textarea>
+        </div>
         <p>大家好，你们好吗？</p>
         <p>大家好，你們好嗎？</p>
         <p>こんにちは皆さんお元気ですか？</p>
@@ -1260,5 +1277,9 @@ See https://github.com/adobe-type-tools/cmap-resources
     </div>
     <script type="module" src="/pdf-js/web/webviewfn/loadPdf.js"></script>
     <script type="module" src="/pdf-js/web/webviewfn/selectText.js"></script>
+    <script
+      type="module"
+      src="/pdf-js/web/webviewfn/microphoneInjectorOnInputs.js"
+    ></script>
   </body>
 </html>

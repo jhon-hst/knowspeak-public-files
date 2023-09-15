@@ -47,7 +47,7 @@ let styleElement = document.createElement("style");
 styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
-let modifyCurrentText = true;
+let isLongSelectionActive = true;
 let activeSelectionByClick = true;
 
 const onPressOverText = () => {
@@ -58,7 +58,7 @@ const onPressOverText = () => {
 
   // when is only click over a text
   if (selection.isCollapsed) {
-    modifyCurrentText = false;
+    isLongSelectionActive = false;
 
     // Extend the range forward until the start word
     while (range.startOffset > 0) {
@@ -78,34 +78,39 @@ const onPressOverText = () => {
       }
     }
 
-    if (PlatformOS === "ios") {
-      // event selectionchange does not active with this selection in iOS
-      const word = range.toString().trim();
+    // event selectionchange does not active with this selection in iOS
+    const word = range.toString().trim();
 
-      if (word) {
-        onMessage(
-          JSON.stringify({
-            type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
-            textSelected: word,
-            modifyCurrentText,
-          })
-        );
-      }
+    if (word) {
+      onMessage(
+        JSON.stringify({
+          type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
+          textSelected: word,
+          isLongSelectionActive,
+        })
+      );
     }
+
     setTimeout(() => {
       selection.removeAllRanges();
-      modifyCurrentText = true;
+      isLongSelectionActive = true;
     }, 200);
   }
 };
 
-document.addEventListener("click", function (e) {
+document.addEventListener("click", function (event) {
+  onMessage(
+    JSON.stringify({
+      type: "${PostMessageEventsTypes.DOCUMENT_CLICK_EVENT}",
+    })
+  );
+
   if (PlatformOS === "ios") {
     // This animation only to iOS beacause android alreday have the selection animation
     var clickElemAnimation = document.createElement("div");
     clickElemAnimation.className = "clickEffect";
-    clickElemAnimation.style.top = e.clientY + "px";
-    clickElemAnimation.style.left = e.clientX + "px";
+    clickElemAnimation.style.top = event.clientY + "px";
+    clickElemAnimation.style.left = event.clientX + "px";
     document.body.appendChild(clickElemAnimation);
     clickElemAnimation.addEventListener("animationend", () => {
       clickElemAnimation.parentElement.removeChild(clickElemAnimation);
@@ -126,12 +131,12 @@ document.addEventListener("click", function (e) {
 document.addEventListener("selectionchange", function (e) {
   // when select a long text
   let selection = document.getSelection();
-  if (selection && selection.toString().length) {
+  if (selection && selection.toString().length && isLongSelectionActive) {
     onMessage(
       JSON.stringify({
         type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
         textSelected: selection.toString().trim(),
-        modifyCurrentText,
+        isLongSelectionActive,
       })
     );
     if (selection.toString().split(" ").length > 1) {
@@ -143,4 +148,5 @@ document.addEventListener("selectionchange", function (e) {
 function removeAllSelections() {
   let selection = document.getSelection();
   selection.removeAllRanges();
+  activeSelectionByClick = true;
 }
