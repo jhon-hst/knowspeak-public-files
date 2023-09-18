@@ -57,10 +57,10 @@ const onPressOverText = () => {
   const node = selection.anchorNode;
 
   // when is only click over a text
-  if (selection.isCollapsed) {
+  if (selection.isCollapsed && node && node.length) {
     isLongSelectionActive = false;
 
-    // Extend the range forward until the start word
+    // // Extend the range forward until the start word
     while (range.startOffset > 0) {
       range.setStart(node, range.startOffset - 1);
       if (range.toString().includes(" ")) {
@@ -69,7 +69,7 @@ const onPressOverText = () => {
       }
     }
 
-    // Extend the range until the end word
+    // // Extend the range until the end word
     while (range.endOffset < node.length) {
       range.setEnd(node, range.endOffset + 1);
       if (range.toString().includes(" ")) {
@@ -111,7 +111,7 @@ document.addEventListener("click", function (event) {
     clickElemAnimation.className = "clickEffect";
     clickElemAnimation.style.top = event.clientY + "px";
     clickElemAnimation.style.left = event.clientX + "px";
-    document.body.appendChild(clickElemAnimation);
+    document.body.append(clickElemAnimation);
     clickElemAnimation.addEventListener("animationend", () => {
       clickElemAnimation.parentElement.removeChild(clickElemAnimation);
     });
@@ -120,6 +120,7 @@ document.addEventListener("click", function (event) {
     onPressOverText();
   }
 
+  // to it does not select text when there is long selection
   let selection = document.getSelection();
   if (selection.toString().split(" ").length > 1) {
     activeSelectionByClick = false;
@@ -147,6 +148,8 @@ document.addEventListener("selectionchange", function (e) {
 
 function removeAllSelections() {
   let selection = document.getSelection();
-  selection.removeAllRanges();
+  if (selection && selection.toString().length) {
+    selection.removeAllRanges();
+  }
   activeSelectionByClick = true;
 }

@@ -6,7 +6,7 @@ const addTextToInput = document.getElementById("addTextToInput");
 addTextToInput.addEventListener("click", (event) => {
   event.stopPropagation();
   const value = inputToLoadText.value;
-  addTextOnInput("value");
+  addTextOnInput(value);
 });
 
 //
@@ -31,7 +31,7 @@ const addMicrophone = () => {
   //If exist microphones then before creating remove them
   const microphones = document.querySelectorAll(".ks-microphone");
   if (microphones && microphones.length) {
-    microphones.forEach(function (microphone) {
+    microphones.forEach((microphone) => {
       microphone.remove();
     });
   }
@@ -93,7 +93,7 @@ const addMicrophone = () => {
       // add icon
       textareas[i].parentNode.style.position = "relative";
       textareas[i].style["padding-left"] = "50px";
-      textareas[i].parentNode.appendChild(Icon(i));
+      textareas[i].parentNode.append(Icon(i));
     }
   }
 
@@ -107,7 +107,7 @@ const addMicrophone = () => {
       if (inputType === "text" || inputType === "search") {
         inputs[i].parentNode.style.position = "relative";
         inputs[i].style["padding-left"] = "50px";
-        inputs[i].parentNode.appendChild(Icon(i));
+        inputs[i].parentNode.append(Icon(i));
       }
     }
   }
@@ -182,8 +182,13 @@ addTextOnInput = (text, isPartialText) => {
 
       // remove Attribute disabled in buttons and actived them in pages like chagpt
       const button = inputMicrophoneActive.nextSibling;
-      button.removeAttribute("disabled");
-      // simulate typing on the keyboard
+
+      if (button && button.hasAttribute && button.hasAttribute("disabled")) {
+        // El botón tiene el atributo "disabled"
+        button.removeAttribute("disabled");
+      }
+
+      // simulate interaction with inputs, There are buttons that are not activated if you do not write in the input
       const event = new Event("input", { bubbles: true });
       inputMicrophoneActive.dispatchEvent(event);
     }
