@@ -1,5 +1,9 @@
 let PlatformOS = "ios";
-
+const LANGUAGES_WITHOUT_SPACE = ["zh", "zh-tw", "zh-cn", "ja"];
+const languageToLearn = "en";
+let isLanguageWithoutSpaces = LANGUAGES_WITHOUT_SPACE.includes(
+  languageToLearn.toLowerCase()
+);
 const onMessage = (messaje) => {
   console.log(messaje);
   // window.ReactNativeWebView.postMessage(messaje)
@@ -60,25 +64,29 @@ const onPressOverText = () => {
   if (selection.isCollapsed && node && node.length) {
     isLongSelectionActive = false;
 
-    // // Extend the range forward until the start word
-    while (range.startOffset > 0) {
+    if (isLanguageWithoutSpaces) {
       range.setStart(node, range.startOffset - 1);
-      if (range.toString().includes(" ")) {
-        range.setStart(node, range.startOffset + 1);
-        break;
+      range.setEnd(node, range.endOffset);
+    } else {
+      // // Extend the range forward until the start word
+      while (range.startOffset > 0) {
+        range.setStart(node, range.startOffset - 1);
+        if (range.toString().includes(" ")) {
+          range.setStart(node, range.startOffset + 1);
+          break;
+        }
+      }
+
+      // // Extend the range until the end word
+      while (range.endOffset < node.length) {
+        range.setEnd(node, range.endOffset + 1);
+        if (range.toString().includes(" ")) {
+          range.setEnd(node, range.endOffset - 1);
+          break;
+        }
       }
     }
-
-    // // Extend the range until the end word
-    while (range.endOffset < node.length) {
-      range.setEnd(node, range.endOffset + 1);
-      if (range.toString().includes(" ")) {
-        range.setEnd(node, range.endOffset - 1);
-        break;
-      }
-    }
-
-    // event selectionchange does not active with this selection in iOS
+    //  event selectionchange does not active with this selection in iOS
     const word = range.toString().trim();
 
     if (word) {
