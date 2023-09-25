@@ -22,28 +22,27 @@ var css = `
     span::selection {
         background-color: #3EE8B5 !important;
     }
-    div.clickEffect{
-        position: fixed;
-        box-sizing: border-box;
-        border-style: solid;
-        border-color: #8E6CF8;
-        border-radius: 50%;
-        animation:clickEffect 0.4s ease-out;
-        z-index: 99999;
+    .textSelectActive {
+        background-color: #3EE8B5;
+        color: ${color};
+        border-radius: 5px;
+        animation: textSelectActiveEffect 0.7s ease-out;
     }
-    @keyframes clickEffect{
+
+    @keyframes textSelectActiveEffect {
         0%{
-            opacity:1;
-            width:0.5em; height:0.5em;
-            margin:-0.25em;
-            border-width:0.5em;
+            background-color: transparent;
+        }
+        30%{
+            background-color: #3EE8B5;
+        }
+        80%{
+            background-color: #3EE8B5;
         }
         100%{
-            opacity:0.2;
-            width:5em; height:5em;
-            margin:-2.5em;
-            border-width:0.03em;
+            background-color: transparent;
         }
+       
     }
 `;
 
@@ -51,60 +50,7 @@ let styleElement = document.createElement("style");
 styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
-let isLongSelectionActive = true;
 let activeSelectionByClick = true;
-
-const onPressOverText = () => {
-  const selection = window.getSelection();
-  if (!selection || selection.rangeCount < 1) return true;
-  const range = selection.getRangeAt(0);
-  const node = selection.anchorNode;
-
-  // when is only click over a text
-  if (selection.isCollapsed && node && node.length) {
-    isLongSelectionActive = false;
-
-    if (isLanguageWithoutSpaces) {
-      range.setStart(node, range.startOffset - 1);
-      range.setEnd(node, range.endOffset);
-    } else {
-      // // Extend the range forward until the start word
-      while (range.startOffset > 0) {
-        range.setStart(node, range.startOffset - 1);
-        if (range.toString().includes(" ")) {
-          range.setStart(node, range.startOffset + 1);
-          break;
-        }
-      }
-
-      // // Extend the range until the end word
-      while (range.endOffset < node.length) {
-        range.setEnd(node, range.endOffset + 1);
-        if (range.toString().includes(" ")) {
-          range.setEnd(node, range.endOffset - 1);
-          break;
-        }
-      }
-    }
-    //  event selectionchange does not active with this selection in iOS
-    const word = range.toString().trim();
-
-    if (word) {
-      onMessage(
-        JSON.stringify({
-          type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
-          textSelected: word,
-          isLongSelectionActive,
-        })
-      );
-    }
-
-    setTimeout(() => {
-      selection.removeAllRanges();
-      isLongSelectionActive = true;
-    }, 200);
-  }
-};
 
 document.addEventListener("click", function (event) {
   onMessage(
@@ -113,19 +59,28 @@ document.addEventListener("click", function (event) {
     })
   );
 
-  if (PlatformOS === "ios") {
-    // This animation only to iOS beacause android alreday have the selection animation
-    var clickElemAnimation = document.createElement("div");
-    clickElemAnimation.className = "clickEffect";
-    clickElemAnimation.style.top = event.clientY + "px";
-    clickElemAnimation.style.left = event.clientX + "px";
-    document.body.append(clickElemAnimation);
-    clickElemAnimation.addEventListener("animationend", () => {
-      clickElemAnimation.parentElement.removeChild(clickElemAnimation);
-    });
-  }
-  if (activeSelectionByClick) {
-    onPressOverText();
+  if (
+    activeSelectionByClick &&
+    event.target &&
+    event.target.classList &&
+    event.target.classList.contains("textSpan")
+  ) {
+    const word = event.target.textContent;
+    if (word) {
+      onMessage(
+        JSON.stringify({
+          type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
+          textSelected: word,
+          isLongSelectionActive: false,
+        })
+      );
+    }
+    if (!event.target.classList.contains("textSelectActive")) {
+      event.target.classList.add("textSelectActive");
+      setTimeout(() => {
+        event.target.classList.remove("textSelectActive");
+      }, 500);
+    }
   }
 
   // to it does not select text when there is long selection
@@ -140,12 +95,12 @@ document.addEventListener("click", function (event) {
 document.addEventListener("selectionchange", function (e) {
   // when select a long text
   let selection = document.getSelection();
-  if (selection && selection.toString().length && isLongSelectionActive) {
+  if (selection && selection.toString().length) {
     onMessage(
       JSON.stringify({
         type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
         textSelected: selection.toString().trim(),
-        isLongSelectionActive,
+        isLongSelectionActive: true,
       })
     );
     if (selection.toString().split(" ").length > 1) {
@@ -161,3 +116,41 @@ function removeAllSelections() {
   }
   activeSelectionByClick = true;
 }
+
+const wrapTextNodesWithSpan = (node) => {
+  if (node.nodeType === Node.TEXT_NODE) {
+    let spannedNodeText = "";
+    if (isLanguageWithoutSpaces) {
+      const text = node.textContent;
+      spannedNodeText = Array.from(text)
+        .map((char) => {
+          if (char.trim() === "") {
+            return char; // Mantener espacios en blanco sin cambios
+          } else {
+            return `<span class="textSpan">${char}</span>`;
+          }
+        })
+        .join("");
+    } else {
+      const words = node.textContent.split(" ");
+      spannedNodeText = words
+        .map((word) => {
+          if (word.trim() === "") {
+            return word; // Mantener espacios en blanco sin cambios
+          } else {
+            return `<span class="textSpan">${word}</span>`;
+          }
+        })
+        .join(" ");
+    }
+
+    const spanContainer = document.createElement("span");
+    spanContainer.innerHTML = spannedNodeText;
+    node.parentNode.replaceChild(spanContainer, node);
+  } else if (node.nodeType === Node.ELEMENT_NODE) {
+    for (let i = 0; i < node.childNodes.length; i++) {
+      wrapTextNodesWithSpan(node.childNodes[i]);
+    }
+  }
+};
+wrapTextNodesWithSpan(document.body);
