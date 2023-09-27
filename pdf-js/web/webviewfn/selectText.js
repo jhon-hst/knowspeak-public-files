@@ -117,8 +117,43 @@ function removeAllSelections() {
   activeSelectionByClick = true;
 }
 
-const wrapTextNodesWithSpan = (node) => {
-  if (node.nodeType === Node.TEXT_NODE) {
+const wrapEachTextWithSpan = () => {
+  // Recursive function to traverse descendant nodes and find text nodes
+  const getTextNodes = (element, textNodeArray) => {
+    if (
+      !["script", "style", "code", "pre"].includes(
+        element.nodeName.toLowerCase()
+      )
+    ) {
+      for (var i = 0; i < element.childNodes.length; i++) {
+        var node = element.childNodes[i];
+        if (node.nodeType === Node.TEXT_NODE) {
+          // If the node is a text node, add it to the array
+          if (node.textContent) {
+            textNodeArray.push(node);
+          }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          // If the node is an element, call the function recursively
+
+          if (
+            !node.classList ||
+            (!node.classList.contains("textSpan") &&
+              !node.classList.contains("containerTextSpan"))
+          ) {
+            getTextNodes(node, textNodeArray);
+          }
+        }
+      }
+    }
+  };
+
+  // Create an empty array to store the text nodes
+  const textNodeArray = [];
+
+  // Call the function to get text nodes within the element
+  getTextNodes(document.body, textNodeArray);
+
+  const wrapTextNodesWithSpan = (node) => {
     let spannedNodeText = "";
     if (isLanguageWithoutSpaces) {
       const text = node.textContent;
@@ -143,14 +178,44 @@ const wrapTextNodesWithSpan = (node) => {
         })
         .join(" ");
     }
-
     const spanContainer = document.createElement("span");
+    spanContainer.className = "containerTextSpan";
     spanContainer.innerHTML = spannedNodeText;
-    node.parentNode.replaceChild(spanContainer, node);
-  } else if (node.nodeType === Node.ELEMENT_NODE) {
-    for (let i = 0; i < node.childNodes.length; i++) {
-      wrapTextNodesWithSpan(node.childNodes[i]);
+
+    // I can't remove o replace child because there are pages that show errors when don't find the original node
+    node.textContent = "";
+    node.parentNode.insertBefore(spanContainer, node.nextSibling);
+  };
+
+  // if exist and nodetext that has Siblings with containerTextSpan is needed remove them to avoid repeat
+  const avoidRepeatSibling = (node) => {
+    if (
+      node.parentNode &&
+      node.parentNode.childNodes &&
+      node.parentNode.childNodes.length > 1
+    ) {
+      const childNodes = node.parentNode.childNodes;
+      childNodes.forEach((child) => {
+        if (
+          child &&
+          child.classList &&
+          child.classList.contains("containerTextSpan")
+        ) {
+          node.parentNode.removeChild(child);
+        }
+      });
     }
-  }
+  };
+
+  textNodeArray.forEach((node) => {
+    avoidRepeatSibling(node);
+    wrapTextNodesWithSpan(node);
+  });
 };
-wrapTextNodesWithSpan(document.body);
+
+wrapEachTextWithSpan(document.body);
+
+// the interval is because there are pages that UI is updated creating new nodes that do not have span wrapper
+setInterval(() => {
+  wrapEachTextWithSpan(document.body);
+}, 5000);
