@@ -187,28 +187,7 @@ const wrapEachTextWithSpan = () => {
     node.parentNode.insertBefore(spanContainer, node.nextSibling);
   };
 
-  // if exist and nodetext that has Siblings with containerTextSpan is needed remove them to avoid repeat
-  const avoidRepeatSibling = (node) => {
-    if (
-      node.parentNode &&
-      node.parentNode.childNodes &&
-      node.parentNode.childNodes.length > 1
-    ) {
-      const childNodes = node.parentNode.childNodes;
-      childNodes.forEach((child) => {
-        if (
-          child &&
-          child.classList &&
-          child.classList.contains("containerTextSpan")
-        ) {
-          node.parentNode.removeChild(child);
-        }
-      });
-    }
-  };
-
   textNodeArray.forEach((node) => {
-    avoidRepeatSibling(node);
     wrapTextNodesWithSpan(node);
   });
 };
