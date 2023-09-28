@@ -16,33 +16,32 @@ let color = isPdfViewer ? "" : "#263859";
 
 var css = `
 	::selection {
-		background-color: #3EE8B5;
-		color: ${color} ;
+      background-color: #3EE8B5;
+      color: ${color} ;
     }
     span::selection {
-        background-color: #3EE8B5 !important;
+      background-color: #3EE8B5 !important;
     }
     .textSelectActive {
-        background-color: #3EE8B5;
-        color: ${color};
-        border-radius: 5px;
-        animation: textSelectActiveEffect 0.7s ease-out;
+      background-color: #3EE8B5;
+      color: ${color};
+      border-radius: 5px;
+      animation: textSelectActiveEffect 0.7s ease-out;
     }
 
     @keyframes textSelectActiveEffect {
-        0%{
-            background-color: transparent;
-        }
-        30%{
-            background-color: #3EE8B5;
-        }
-        80%{
-            background-color: #3EE8B5;
-        }
-        100%{
-            background-color: transparent;
-        }
-       
+      0%{
+          background-color: #3EE8B5;
+      }
+      30%{
+          background-color: #3EE8B5;
+      }
+      60%{
+          background-color: #3EE8B5;
+      }
+      100%{
+          background-color: transparent;
+      }
     }
 `;
 
