@@ -8,7 +8,18 @@ const onMessage = (messaje) => {
   console.log(messaje);
   // window.ReactNativeWebView.postMessage(messaje)
 };
+var onToggleTranslator = null;
+let isTranslatorActive = true;
 
+//
+//
+//
+//
+//
+//
+//
+
+let activeSelectionByClick = true;
 // change selection text color
 // span is to pdf.js
 let isPdfViewer = document.querySelector(".pdfViewer") !== null;
@@ -49,8 +60,6 @@ let styleElement = document.createElement("style");
 styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
-let activeSelectionByClick = true;
-
 document.addEventListener("click", function (event) {
   onMessage(
     JSON.stringify({
@@ -59,6 +68,7 @@ document.addEventListener("click", function (event) {
   );
 
   if (
+    isTranslatorActive &&
     activeSelectionByClick &&
     event.target &&
     event.target.classList &&
@@ -94,7 +104,7 @@ document.addEventListener("click", function (event) {
 document.addEventListener("selectionchange", function (e) {
   // when select a long text
   let selection = document.getSelection();
-  if (selection && selection.toString().length) {
+  if (isTranslatorActive && selection && selection.toString().length) {
     onMessage(
       JSON.stringify({
         type: "${PostMessageEventsTypes.PRESS_OVER_TEXT}",
@@ -197,3 +207,7 @@ wrapEachTextWithSpan(document.body);
 setInterval(() => {
   wrapEachTextWithSpan(document.body);
 }, 5000);
+
+onToggleTranslator = () => {
+  isTranslatorActive = !isTranslatorActive;
+};

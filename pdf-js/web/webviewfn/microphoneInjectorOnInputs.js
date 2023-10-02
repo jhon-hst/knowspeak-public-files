@@ -1,20 +1,26 @@
-var addTextOnInput = null;
-var cleanTextOnInput = null;
+var onAddTextOnInput = null;
+var onCleanTextOnInput = null;
+var onToggleMicrophone = null;
 
 const inputToLoadText = document.getElementById("inputToLoadText");
 const addTextToInput = document.getElementById("addTextToInput");
 addTextToInput.addEventListener("click", (event) => {
   event.stopPropagation();
   const value = inputToLoadText.value;
-  addTextOnInput(value);
+  onAddTextOnInput(value);
 });
+let isMicrophoneActive = true;
+//
+//
+//
+//
+//
+//
 
-//
-//
-//
-//
-//
-//
+const onMessage = (messaje) => {
+  console.log(messaje);
+};
+
 // is the text saved while user is talking
 let globalPartialText = null;
 
@@ -22,10 +28,6 @@ let globalPartialText = null;
 let globalPartialTextCursor = { start: null, end: null };
 
 let inputMicrophoneActive = null;
-
-const onMessage = (messaje) => {
-  console.log(messaje);
-};
 
 const addMicrophone = () => {
   //If exist microphones then before creating remove them
@@ -113,23 +115,11 @@ const addMicrophone = () => {
   }
 };
 
-addMicrophone();
+if (isMicrophoneActive) {
+  addMicrophone();
+}
 
-// In page like chat gpt some component are updated without updated page, so Microphone losses with this interval check if is necesary to create microphones other time
-setInterval(() => {
-  const elements = document.querySelectorAll(".ks-microphone");
-  const textareas = document.querySelectorAll("textarea");
-  const inputs = document.querySelectorAll("input");
-
-  if (!elements.length && (textareas.length || inputs.length)) {
-    addMicrophone();
-    onMessage(
-      JSON.stringify({ type: "${PostMessageEventsTypes.ADDED_MICROPHONES}" })
-    );
-  }
-}, 2000);
-
-addTextOnInput = (text, isPartialText) => {
+onAddTextOnInput = (text, isPartialText) => {
   if (inputMicrophoneActive && text) {
     const currentHeight = inputMicrophoneActive.style.height;
 
@@ -208,8 +198,51 @@ addTextOnInput = (text, isPartialText) => {
   }
 };
 
-cleanTextOnInput = () => {
+onCleanTextOnInput = () => {
   if (inputMicrophoneActive) {
     inputMicrophoneActive.value = "";
+  }
+};
+
+// In page like chat gpt some component are updated without updated page, so Microphone losses with this interval check if is necesary to create microphones other time
+let intervalActiveMicro;
+
+const startMicrophoneInterval = () => {
+  intervalActiveMicro = setInterval(() => {
+    const elements = document.querySelectorAll(".ks-microphone");
+    const textareas = document.querySelectorAll("textarea");
+    const inputs = document.querySelectorAll("input");
+
+    if (
+      isMicrophoneActive &&
+      !elements.length &&
+      (textareas.length || inputs.length)
+    ) {
+      addMicrophone();
+      onMessage(
+        JSON.stringify({ type: "${PostMessageEventsTypes.ADDED_MICROPHONES}" })
+      );
+    }
+  }, 2000);
+};
+
+const stopMicrophoneInterval = () => {
+  clearInterval(intervalActiveMicro);
+  const microphones = document.querySelectorAll(".ks-microphone");
+  if (microphones && microphones.length) {
+    microphones.forEach((microphone) => {
+      microphone.remove();
+    });
+  }
+  isMicrophoneActive = false;
+};
+
+onToggleMicrophone = () => {
+  if (isMicrophoneActive) {
+    stopMicrophoneInterval();
+  } else {
+    addMicrophone();
+    startMicrophoneInterval();
+    isMicrophoneActive = true;
   }
 };
