@@ -9,6 +9,7 @@ const onMessage = (messaje) => {
   // window.ReactNativeWebView.postMessage(messaje)
 };
 var onToggleTranslator = null;
+var onRemoveAllSelections = null;
 let isTranslatorActive = true;
 
 //
@@ -118,13 +119,13 @@ document.addEventListener("selectionchange", function (e) {
   }
 });
 
-function removeAllSelections() {
+onRemoveAllSelections = () => {
   let selection = document.getSelection();
   if (selection && selection.toString().length) {
     selection.removeAllRanges();
   }
   activeSelectionByClick = true;
-}
+};
 
 const wrapEachTextWithSpan = () => {
   // Recursive function to traverse descendant nodes and find text nodes
@@ -201,13 +202,30 @@ const wrapEachTextWithSpan = () => {
   });
 };
 
-wrapEachTextWithSpan(document.body);
+let bodySaved = null;
+let timeoutId;
 
-// the interval is because there are pages that UI is updated creating new nodes that do not have span wrapper
-setInterval(() => {
-  wrapEachTextWithSpan(document.body);
-}, 5000);
+const onSetSpanInIntervals = () => {
+  const currentBody = document.body.innerHTML;
+  if (isTranslatorActive) {
+    /* if currentBody is differnt is because the body is updating, only wraps in span 
+        when the body finish the updating */
+    if (bodySaved === currentBody) {
+      wrapEachTextWithSpan(currentBody);
+      timeoutId = setTimeout(onSetSpanInIntervals, 5000);
+    } else {
+      bodySaved = currentBody;
+      timeoutId = setTimeout(onSetSpanInIntervals, 2000);
+    }
+  }
+};
+
+onSetSpanInIntervals();
 
 onToggleTranslator = () => {
   isTranslatorActive = !isTranslatorActive;
+
+  if (!isTranslatorActive && timeoutId) {
+    clearTimeout(timeoutId);
+  }
 };

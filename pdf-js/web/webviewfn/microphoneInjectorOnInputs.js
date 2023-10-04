@@ -226,6 +226,8 @@ const startMicrophoneInterval = () => {
   }, 2000);
 };
 
+startMicrophoneInterval();
+
 const stopMicrophoneInterval = () => {
   clearInterval(intervalActiveMicro);
   const microphones = document.querySelectorAll(".ks-microphone");
