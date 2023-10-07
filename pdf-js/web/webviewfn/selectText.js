@@ -164,6 +164,7 @@ const wrapEachTextWithSpan = () => {
   getTextNodes(document.body, textNodeArray);
 
   const wrapTextNodesWithSpan = (node) => {
+    const tag = isPdfViewer ? 'em' : 'span'
     let spannedNodeText = "";
     if (isLanguageWithoutSpaces) {
       const text = node.textContent;
@@ -172,7 +173,7 @@ const wrapEachTextWithSpan = () => {
           if (char.trim() === "") {
             return char; // Mantener espacios en blanco sin cambios
           } else {
-            return `<span class="textSpan">${char}</span>`;
+            return `<${tag} class="textSpan">${char}</${tag}>`;
           }
         })
         .join("");
@@ -183,12 +184,12 @@ const wrapEachTextWithSpan = () => {
           if (word.trim() === "") {
             return word; // Mantener espacios en blanco sin cambios
           } else {
-            return `<span class="textSpan">${word}</span>`;
+            return `<${tag} class="textSpan">${word}</${tag}>`;
           }
         })
         .join(" ");
     }
-    const spanContainer = document.createElement("span");
+    const spanContainer = document.createElement(`${tag}`);
     spanContainer.className = "containerTextSpan";
     spanContainer.innerHTML = spannedNodeText;
 
