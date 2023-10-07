@@ -51,18 +51,6 @@
         }
       },
       {
-        "name": " Main Street",
-        "url": "https://americainclass.org/sources/becomingmodern/divisions/text3/mainstreet.pdf",
-        "thumbnail": "https://d1b14unh5d6w7g.cloudfront.net/142095931X.01.S001.JUMBOXXX.jpg?Expires=1694363030&Signature=LyK78~vwyVD-lCGDphmUgScHfyUWPqhkCSeKRK~Ct7LBrbGG1t5p6cNrNXXpjCw91lxiX-54gqQ4v7at05KnbZaywpQIKDDtib4SBcEm96YAyOxsMTGoi5IRr5meEDIKdO~k6d-JVe24Hj10Jr8paM5ULUbOvGqTJLP1~S6khjk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1694277082884,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
         "type": "message"
       }
     ]
@@ -110,18 +98,6 @@
         "name": "Gulliver’s Travels",
         "url": "https://antilogicalism.com/wp-content/uploads/2018/04/gullivers-travels.pdf",
         "thumbnail": "https://cdn.asaha.com/assets/thumbs/a01/a0167e2ee4000863e4a864496d36dea0.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "name": "The Three Musketeers",
-        "url": "https://www.planetebook.com/free-ebooks/the-three-musketeers.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/941/941e803fb7c262456ebc472878753c5f.jpg",
         "type": "pdf",
         "lang": "en",
         "created_at": 1691273456737,
@@ -193,74 +169,6 @@
         "type": "pdf",
         "lang": "en",
         "created_at": 1691272263200,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "type": "message"
-      }
-    ]
-  },
-  {
-    "title": "#4",
-    "items": [
-      {
-        "name": "Gulliver’s Travels",
-        "url": "https://antilogicalism.com/wp-content/uploads/2018/04/gullivers-travels.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/a01/a0167e2ee4000863e4a864496d36dea0.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "name": "The Three Musketeers",
-        "url": "https://www.planetebook.com/free-ebooks/the-three-musketeers.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/941/941e803fb7c262456ebc472878753c5f.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "name": "Pinocchio",
-        "url": "https://cdn.macmillanyounglearners.com/readers-public/Explorers_4_Pinocchio_Chapter_1.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/226/22651027205bf14c0df42173e5160dc5.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "name": "Moby-Dick",
-        "url": "https://uberty.org/wp-content/uploads/2015/12/herman-melville-moby-dick.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/079/079124086a15a03131559cfb2d2a4786.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
-        "category": {
-          "id": "1",
-          "name": "General"
-        }
-      },
-      {
-        "name": "Pride And Prejudice",
-        "url": "https://www.gutenberg.org/files/1342/old/pandp12p.pdf",
-        "thumbnail": "https://cdn.asaha.com/assets/thumbs/f21/f21cde5aaf38ce3f0e592f95de435276.jpg",
-        "type": "pdf",
-        "lang": "en",
-        "created_at": 1691273456737,
         "category": {
           "id": "1",
           "name": "General"
