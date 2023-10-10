@@ -10,6 +10,7 @@ const onMessage = (messaje) => {
 };
 var onToggleTranslator = null;
 var onRemoveAllSelections = null;
+var onWrapEachTextWithSpan = null;
 let isTranslatorActive = true;
 
 //
@@ -27,7 +28,10 @@ let isPdfViewer = document.querySelector(".pdfViewer") !== null;
 let color = isPdfViewer ? "" : "#263859";
 
 var css = `
-	::selection {
+    em {
+      font-style: normal;
+    }
+	  ::selection {
       background-color: #3EE8B5;
       color: ${color} ;
     }
@@ -127,7 +131,7 @@ onRemoveAllSelections = () => {
   activeSelectionByClick = true;
 };
 
-const wrapEachTextWithSpan = () => {
+onWrapEachTextWithSpan = () => {
   // Recursive function to traverse descendant nodes and find text nodes
   const getTextNodes = (element, textNodeArray) => {
     if (
@@ -164,7 +168,7 @@ const wrapEachTextWithSpan = () => {
   getTextNodes(document.body, textNodeArray);
 
   const wrapTextNodesWithSpan = (node) => {
-    const tag = isPdfViewer ? 'em' : 'span'
+    const tag = isPdfViewer ? "em" : "span";
     let spannedNodeText = "";
     if (isLanguageWithoutSpaces) {
       const text = node.textContent;
@@ -210,9 +214,9 @@ const onSetSpanInIntervals = () => {
   const currentBody = document.body.innerHTML;
   if (isTranslatorActive) {
     /* if currentBody is differnt is because the body is updating, only wraps in span 
-        when the body finish the updating */
+            when the body finish the updating */
     if (bodySaved === currentBody) {
-      wrapEachTextWithSpan(currentBody);
+      onWrapEachTextWithSpan(currentBody);
       timeoutId = setTimeout(onSetSpanInIntervals, 5000);
     } else {
       bodySaved = currentBody;
@@ -221,6 +225,7 @@ const onSetSpanInIntervals = () => {
   }
 };
 
+onWrapEachTextWithSpan(document.body);
 onSetSpanInIntervals();
 
 onToggleTranslator = () => {

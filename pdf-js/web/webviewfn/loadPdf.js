@@ -44,12 +44,22 @@ function loadPdfOnWebView(base64) {
       await PDFViewerApplication.open({ data: pdfAsArray });
     } catch (e) {
       onMessage(JSON.stringify({ type: "${PostMessageEventsTypes.ERROR}", e }));
-    } finally {
-      onMessage(
-        JSON.stringify({
-          type: "${PostMessageEventsTypes.LOADING_FINALIZED}",
-        })
-      );
     }
   })();
+
+  PDFViewerApplication.eventBus.on("pagesloaded", (event) => {
+    onMessage(
+      JSON.stringify({
+        type: "${PostMessageEventsTypes.PDF_LOADING_FINALIZED}",
+      })
+    );
+  });
+
+  PDFViewerApplication.eventBus.on("pagechanging", (event) => {
+    onMessage(
+      JSON.stringify({
+        type: "${PostMessageEventsTypes.PDF_LOADING_FINALIZED}",
+      })
+    );
+  });
 }
