@@ -55,10 +55,10 @@ function loadPdfOnWebView(base64) {
     );
   });
 
-  PDFViewerApplication.eventBus.on("pagechanging", (event) => {
+  PDFViewerApplication.eventBus.on("pagerender", (event) => {
     onMessage(
       JSON.stringify({
-        type: "${PostMessageEventsTypes.PDF_LOADING_FINALIZED}",
+        type: "${PostMessageEventsTypes.PDF_PAGE_CHANGING}",
       })
     );
   });
