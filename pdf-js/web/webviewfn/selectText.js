@@ -66,6 +66,18 @@ styleElement.innerHTML = css;
 document.head.appendChild(styleElement);
 
 document.addEventListener("click", function (event) {
+  var textIslink = event.target.closest("a");
+
+  if (textIslink) {
+    event.preventDefault();
+    onMessage(
+      JSON.stringify({
+        type: "${PostMessageEventsTypes.CLICK_IN_LINK}",
+        href: textIslink.href,
+      })
+    );
+  }
+
   onMessage(
     JSON.stringify({
       type: "${PostMessageEventsTypes.DOCUMENT_CLICK_EVENT}",
