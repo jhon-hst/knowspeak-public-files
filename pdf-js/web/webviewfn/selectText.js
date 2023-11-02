@@ -68,7 +68,7 @@ document.head.appendChild(styleElement);
 document.addEventListener("click", function (event) {
   var textIslink = event.target.closest("a");
 
-  if (textIslink) {
+  if (textIslink && textIslink.href && textIslink.href.startsWith("http")) {
     event.preventDefault();
     onMessage(
       JSON.stringify({
