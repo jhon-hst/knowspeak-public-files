@@ -28,6 +28,15 @@ let isPdfViewer = document.querySelector(".pdfViewer") !== null;
 let color = isPdfViewer ? "" : "#263859";
 
 var css = `
+
+    // .textLayer span {
+    //   color: #000 !important;
+    //   background-color: #FFF !important;
+    // }
+    // .textLayer {
+    //   opacity: 1 !important;
+    // }
+
     em {
       font-style: normal;
     }
