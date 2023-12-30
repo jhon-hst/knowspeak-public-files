@@ -1,0 +1,160 @@
+[
+  {
+    "name": "The Adventures of Tom Sawyer",
+    "url": "https://giove.isti.cnr.it/demo/eread/Libri/joy/TSawyer.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/63f/63f53f14ffc5f5b19097385b3378a73b.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1694277082884,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Love and Friendship",
+    "url": "https://almabooks.com/wp-content/uploads/2016/10/loveandfriendship.pdf",
+    "thumbnail": "https://syndetics.com/index.php?client=dartmouthu&isbn=1843910608/sc.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1694277082884,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "The Curious Case of Benjamin Button",
+    "url": "https://web.seducoahuila.gob.mx/biblioweb/upload/The%20Curious%20Case%20of%20Benjamin%20Button.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/0c5/0c57809ff7cd3c08f7e21633f4fda18d.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1694277082884,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "The Story of the Middle Ages",
+    "url": "https://www.yesterdaysclassics.com/previews/harding_middle_preview.pdf",
+    "thumbnail": "https://m.media-amazon.com/images/P/1482038706.01._SCLZZZZZZZ_SX500_.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1694277082884,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+
+  {
+    "name": "Pinocchio",
+    "url": "https://cdn.macmillanyounglearners.com/readers-public/Explorers_4_Pinocchio_Chapter_1.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/226/22651027205bf14c0df42173e5160dc5.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691273456737,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Moby-Dick",
+    "url": "https://uberty.org/wp-content/uploads/2015/12/herman-melville-moby-dick.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/079/079124086a15a03131559cfb2d2a4786.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691273456737,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Pride And Prejudice",
+    "url": "https://www.gutenberg.org/files/1342/old/pandp12p.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/f21/f21cde5aaf38ce3f0e592f95de435276.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691273456737,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Gulliver’s Travels",
+    "url": "https://antilogicalism.com/wp-content/uploads/2018/04/gullivers-travels.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/a01/a0167e2ee4000863e4a864496d36dea0.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691273456737,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+
+  {
+    "name": "AROUND THE WORLD IN EIGHTY DAYS",
+    "url": "https://www.ibiblio.org/ebooks/Verne/Eighty_Days.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/ca8/ca81dcbf605d07db3ecab4fa614bf0ef.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691272263200,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Peter Pan",
+    "url": "https://freekidsbooks.org/wp-content/uploads/2016/12/Peter-Pan-The-Boy-Who-Would-Not-Grow-Up.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/d43/d43f549260b5030681e80ccbd1ace1bb.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691272263200,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "Charles Darwin and The Origin of Species",
+    "url": "https://laurieximenez.files.wordpress.com/2019/04/the-origin-of-species_charles-darwin.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/11d/11de44da87b656f357bcbad18d9ba6e4.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691272263200,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "TARZAN OF THE APES BY EDGAR RICE BURROUGHS",
+    "url": "https://www.epedagogia.com.br/materialbibliotecaonine/4102TARZAN-0F-THE-APES.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/71f/71f802f4a6934b039ebca49b9066dc29.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691272263200,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  },
+  {
+    "name": "The Art of War",
+    "url": "https://sites.ualberta.ca/~enoch/Readings/The_Art_Of_War.pdf",
+    "thumbnail": "https://cdn.asaha.com/assets/thumbs/34f/34f2e0b0da52f2934e630fdd0af4da65.jpg",
+    "type": "pdf",
+    "lang": "en",
+    "created_at": 1691272263200,
+    "category": {
+      "id": "1",
+      "name": "General"
+    }
+  }
+]
