@@ -1,17 +1,5 @@
 [
   {
-    "name": "Wolverine's Berserker Rage - Forest Fight Scene | Logan (2017) ",
-    "url": "https://www.youtube.com/watch?v=qCFDAkjyJ3k",
-    "thumbnail": "https://i.ytimg.com/vi/qCFDAkjyJ3k/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1694273247730,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
     "name": "The Pursuit of Happyness (8/8) Movie CLIP - Final Scene: Chris is Hired (2006)",
     "url": "https://www.youtube.com/watch?v=56fngopihOo",
     "thumbnail": "https://i.ytimg.com/vi/56fngopihOo/hqdefault.jpg",
@@ -48,43 +36,6 @@
     }
   },
   {
-    "name": "Bumblebee vs Barricade - London Chase Scene | Transformers The Last Knight (2017)",
-    "url": "https://www.youtube.com/watch?v=W15W3E_CIBc",
-    "thumbnail": "https://i.ytimg.com/vi/W15W3E_CIBc/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1694273247730,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-
-  {
-    "name": "Steve Rogers Recruitment - \"I Can Do This All Day\" Scene | Captain America The First Avenger (2011)",
-    "url": "https://www.youtube.com/watch?v=8w82CCk1FeI",
-    "thumbnail": "https://i.ytimg.com/vi/8w82CCk1FeI/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Scarlet Witch Becomes an Avenger - Battle of Sokovia (Part 2) | Avengers Age of Ultron (2015)",
-    "url": "https://www.youtube.com/watch?v=w6wXvqueG4U",
-    "thumbnail": "https://i.ytimg.com/vi/w6wXvqueG4U/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
     "name": "Legion (2/10) Movie CLIP - Granny's Got Teeth (2010) HD",
     "url": "https://www.youtube.com/watch?v=tWEBbYoDaU8",
     "thumbnail": "https://i.ytimg.com/vi/tWEBbYoDaU8/hqdefault.jpg",
@@ -100,18 +51,6 @@
     "name": "Interstellar | Tidal Wave Full Scene (Anne Hathaway, Matthew McConaughey)",
     "url": "https://www.youtube.com/watch?v=60h6lpnSgck",
     "thumbnail": "https://i.ytimg.com/vi/60h6lpnSgck/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Alita vs Zapan - Bar Fight Scene | Alita Battle Angel (2019) ",
-    "url": "https://www.youtube.com/watch?v=OkAHOuhjBmk",
-    "thumbnail": "https://i.ytimg.com/vi/OkAHOuhjBmk/hqdefault.jpg",
     "type": "youtubeVideo",
     "lang": "en",
     "created_at": 1691259978738,
@@ -145,61 +84,12 @@
     }
   },
   {
-    "name": "Hank McCoy Introduction Scene | X-Men First Class (2011) Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=U34DgTldnQ4",
-    "thumbnail": "https://i.ytimg.com/vi/U34DgTldnQ4/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
     "name": "Johnny Storm & Victor Von Doom - Limo Deleted Scene | Fantastic Four (2005) Movie Clip HD",
     "url": "https://www.youtube.com/watch?v=q_TTMQiIIaw",
     "thumbnail": "https://i.ytimg.com/vi/q_TTMQiIIaw/hqdefault.jpg",
     "type": "youtubeVideo",
     "lang": "en",
     "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Tony Stark's Message to Pepper Potts Scene | Avengers Endgame (2019) IMAX Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=AMv3fJgpU-0",
-    "thumbnail": "https://i.ytimg.com/vi/AMv3fJgpU-0/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691259978738,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-
-  {
-    "name": "Wolverine vs Blob - \"Did You Just Call Me Blob\" Scene | X-Men Origins Wolverine (2009) Movie Clip 4K",
-    "url": "https://www.youtube.com/watch?v=U6nVKWn5wMA",
-    "thumbnail": "https://i.ytimg.com/vi/U6nVKWn5wMA/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Tony Stark's Speech at Stark Expo - Stan Lee Cameo Scene | Iron Man 2 (2010) Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=r1X1K1hFsq4",
-    "thumbnail": "https://i.ytimg.com/vi/r1X1K1hFsq4/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
     "category": {
       "id": "1",
       "name": "General"
@@ -221,42 +111,6 @@
     "name": "Wicked - Official Trailer",
     "url": "https://www.youtube.com/watch?v=6COmYeLsz4c",
     "thumbnail": "https://i.ytimg.com/vi/6COmYeLsz4c/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Elon Musk Cameo Scene | Iron Man 2 (2010) Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=AwK8DZu12H0",
-    "thumbnail": "https://i.ytimg.com/vi/AwK8DZu12H0/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Frigga vs Malekith - Frigga's Death Scene | Thor The Dark World (2013) Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=nhka3n2q5Bw",
-    "thumbnail": "https://i.ytimg.com/vi/nhka3n2q5Bw/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-  {
-    "name": "Charlie & Bumblebee \"Goodbye\" - Camaro Transformation Scene | Bumblebee (2018) Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=cDw7ob9Eyiw",
-    "thumbnail": "https://i.ytimg.com/vi/cDw7ob9Eyiw/hqdefault.jpg",
     "type": "youtubeVideo",
     "lang": "en",
     "created_at": 1691258377764,
@@ -289,19 +143,6 @@
       "name": "General"
     }
   },
-  {
-    "name": "Making Stormbreaker - Groot Lifts Thor's Axe | Avengers Infinity War (2018) IMAX Movie Clip HD 4K",
-    "url": "https://www.youtube.com/watch?v=tNbSnOSrOcI",
-    "thumbnail": "https://i.ytimg.com/vi/tNbSnOSrOcI/hqdefault.jpg",
-    "type": "youtubeVideo",
-    "lang": "en",
-    "created_at": 1691258377764,
-    "category": {
-      "id": "1",
-      "name": "General"
-    }
-  },
-
   {
     "name": "\"Avengers Assemble\" Scenes - 8K IMAX - The Highest Quality Video on Youtube - Eng Kor Jap SubCC",
     "url": "https://www.youtube.com/watch?v=PhAsdlmY0o8",
